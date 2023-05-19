@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"dashboard"/}
+
+#{list items:stations, as:'station'}
+<div class="content box">
+
+    #{latestreadings station:station /}
+    <a href="/stations/${station.id}" class="icon has-text-primary">
+        <i class="fas fa-folder"></i>
+    </a>
+    <a href="/dashboard/deleteStation/${station.id}" class="icon has-text-danger">
+        <i class="fas fa-trash"></i>
+    </a>
+</div>
+#{/list}
+
+#{addstation /}

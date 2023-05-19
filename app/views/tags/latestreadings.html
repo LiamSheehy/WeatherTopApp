@@ -1,0 +1,58 @@
+#{list items:_station.latestReading(), as:'reading'}
+<style>
+    .fa-solid {
+    }
+</style>
+<div class="columns is-variable is-fullheight">
+    <div class="column">
+        <div class="box has-background-primary has-text-white is-size-5 has-text-weight-bold" style="height: 100%;">
+            <p class="is-size-5 mb-2">${_station.title}</p>
+            <p class="is-size-7 mb-0">Lat: ${_station.latitude}</p>
+            <p class="is-size-7 mb-0">Lng: ${_station.longitude}</p>
+            <span class="icon is-large has-text-warning" style="position: relative; top: -50%; right: -80%;">
+      <i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+
+    </span>
+        </div>
+    </div>
+    <div class="column">
+        <div class="box has-background-info-dark has-text-white is-size-5 has-text-weight-bold" style="height: 100%;">
+            <p class="is-size-5 mb-2">Weather</p>
+            <p class="is-size-7 mb-0">${reading.displayWeatherCode()}</p>
+            <span class="icon is-large has-text-warning" style="position: relative; top: -30%; right: -75%;">
+      <i class="fa fa-sun-o fa-solid fa-3x" aria-hidden="true"></i>
+    </span>
+        </div>
+    </div>
+
+    <div class="column">
+        <div class="box has-background-info-dark has-text-white is-size-5 has-text-weight-bold" style="height: 100%;">
+            <p class="is-size-5 mb-2">Temp</p>
+            <p class="is-size-7 mb-0">${reading.temp} °C</p>
+            <p class="is-size-7 mb-0">${reading.displayFahrenheit()} °F</p>
+            <span class="icon is-large has-text-warning" style="position: relative; top: -45%; right: -75%;">
+      <i class="fa fa-thermometer-empty fa-solid fa-3x" aria-hidden="true"></i>
+    </span>
+        </div>
+    </div>
+    <div class="column">
+        <div class="box has-background-info-dark has-text-white is-size-5 has-text-weight-bold" style="height: 100%;">
+            <p class="is-size-5 mb-2">Wind</p>
+            <p class="is-size-7 mb-0">${reading.displayBeaufort()} bft</p>
+            <p class="is-size-7 mb-0">${reading.displayCompassDirection()}</p>
+            <p class="is-size-7 mb-0">Feels like <br> ${reading.displayWindChill()}</p>
+            <span class="icon is-large has-text-warning" style="position: relative; top: -65%; right: -75%;">
+      <i class="fa fa-compass fa-solid fa-3x" aria-hidden="true"></i>
+    </span>
+        </div>
+    </div>
+    <div class="column">
+        <div class="box has-background-info-dark has-text-white is-size-5 has-text-weight-bold" style="height: 100%;">
+            <p class="is-size-5 mb-2">Pressure</p>
+            <p class="is-size-7 mb-0">${reading.pressure} hpa</p><span class="icon is-large has-text-warning" style="position: relative; top: -40%; right: -75%;">
+      <i class="fa fa-arrows-alt fa-solid fa-3x" aria-hidden="true"></i>
+    </span>
+        </div>
+    </div>
+</div>
+#{/list}
