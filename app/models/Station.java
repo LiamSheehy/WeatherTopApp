@@ -19,7 +19,7 @@ public class Station extends Model {
     public Long code;
     public double latitude;
     public double longitude;
-  //  public String shortestReadingTitle;
+
     public Station(String title, double latitude, double longitude) {
         this.title = title;
         this.longitude = longitude;
@@ -34,10 +34,6 @@ public class Station extends Model {
 
         return currentReading;
     }
-//    public String currentWeatherCodeIcon() {
-//        int number = readings.get(readings.size() - 1).code;
-//        String convertToWeathercode = Reading.convertToWeathercode(number);
-//        return convertToWeathercode;
-//    }
+
 }
 

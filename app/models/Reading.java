@@ -13,7 +13,14 @@ public class Reading extends Model {
     public String weatherCode;
     public int beaufort;
 
-
+    /**
+     * Constructor method for the above Reading class
+     * @param code
+     * @param temp
+     * @param windSpeed
+     * @param windDirection
+     * @param pressure
+     */
     public Reading(int code, double temp, double windSpeed, double windDirection, int pressure) {
         this.code = code;
         this.temp = temp;
@@ -74,6 +81,11 @@ public class Reading extends Model {
         return convertToWeathercode;
     }
 
+    /** Calculation to convert param windSpeed to beaufort scale output and display the output which is then called in the view Tag
+     * latestreadings.html
+     * @param windSpeed
+     * @return
+     */
     public int convertToBeaufort(double windSpeed) {
         if (windSpeed == 1) {
             beaufort = 0;
@@ -113,7 +125,14 @@ public class Reading extends Model {
         return beaufort1;
     }
 
-    // Used chat Gpt to see if there was a way to calculate the table for direction rather than writing a long if else statement
+/** Calculation to convert param windDirection to output compass direction and display the output which is then called
+ *  the view Tag latestreadings.html
+ * I was going to copy the Beaufort type code but knew it could be calculated by breaking up the 16 points and dividing
+ * it to represent the direction but I didnt know how to array it so i Used chat Gpt to see if there was a way to write
+ * it other than writing a long if else statement
+ *  @param windDirection
+ * @return
+ */
     public static String convertToCompassDirection(double windDirection) {
         String[] directions = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
         int index = (int) ((windDirection / 22.5) + 0.5);
@@ -125,7 +144,11 @@ public class Reading extends Model {
         String compassDirections = convertToCompassDirection(number);
         return compassDirections;
     }
-
+/** Calculation to convert param temp & windSpeed to output windchill and display the output which is then called
+ *  the view Tag latestreadings.html
+ * @ param temp windSpeed
+ * @return
+ * */
     public double calculateWindChill(double temp, double windSpeed) {
         double windChill = 13.12 + 0.6215 * temp - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temp * Math.pow(windSpeed, 0.16);
         return Math.round(windChill * 100.0) / 100.0;
