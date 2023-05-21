@@ -29,7 +29,7 @@ public class Reading extends Model {
         this.pressure = pressure;
     }
 
-    /** Calculation to convert temp celcius to fahrenheit and dispaly the output which is then called in the view Tag
+    /** Calculation to convert temp celcius to fahrenheit and display the output which is then called in the view Tag
      * latestreadings.html
      *
      * @param celcius
@@ -40,7 +40,7 @@ public class Reading extends Model {
     }
 
     public double displayFahrenheit() {
-        double celcius = temp;
+        double celcius = Math.round(temp * 100.0) / 100.0;
         return convertToFahrenheit(celcius);
     }
 

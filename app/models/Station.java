@@ -10,6 +10,13 @@ import javax.persistence.OneToMany;
 import play.db.jpa.Model;
 import models.Reading;
 
+/**
+ * Updated original playlist lab to work with assignment set up for Station and readings including
+ * the longitude and latitude from the yml file
+ * plus the latest readings which was taken from a post by KGarvey to check for readings and
+ * call the last entry in the array
+ */
+
 @Entity
 public class Station extends Model {
     public String title;

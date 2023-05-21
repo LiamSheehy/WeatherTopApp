@@ -15,7 +15,6 @@ public class StationCtrl extends Controller
     {
         Station station = Station.findById(id);
         Logger.info("Station id = " + id);
-//        station.shortestReadingTitle = String.valueOf(StationAnalytics.getShortestReading(station.readings).code);
         render("station.html", station);
     }
 
