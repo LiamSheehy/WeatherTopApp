@@ -1,6 +1,8 @@
 # WeatherTopApp 
 
 This is my web and programming assignment Weather Top App release 1+
+
+* I have completed the items to release 1 plus singular elemtns from other relases
 * I have a main, dashboard and about page.
 * The Stations and readings appear as expected
 * The latest readings are displaying on both
